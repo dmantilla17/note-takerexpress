@@ -4,12 +4,12 @@ const router = require("express").Router();
 const fs = require("fs");
 const uuid = "uuid";
 //ROUTES
-router.get("./personel/notes.js", (req, res) => {
+router.get("./personel/notes", (req, res) => {
   res.json(notes);
   return console.log("Success!");
 });
 //adding a new note to the page
-router.post("./personel/notes.js", (req, res) => {
+router.post("./personel/notes", (req, res) => {
   //.addNote((note));
   let note = req.body;
   database.push(note);
