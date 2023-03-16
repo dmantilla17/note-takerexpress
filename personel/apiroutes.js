@@ -4,16 +4,16 @@ const router = require("express").Router();
 const fs = require("fs");
 const uuid = "uuid";
 //ROUTES
-router.get("/notes", (req, res) => {
+router.get("./personel/notes.js", (req, res) => {
   res.json(notes);
   return console.log("Success!");
 });
 //adding a new note to the page
-router.post("./notes", (req, res) => {
+router.post("./personel/notes.js", (req, res) => {
   //.addNote((note));
   let note = req.body;
   database.push(note);
-  fs.writeFile("./db/db.json", JSON.stringify(database), (err) => {
+  fs.writeFile("../db/db.json", JSON.stringify(database), (err) => {
     if (err) {
       console.log(err);
     }
